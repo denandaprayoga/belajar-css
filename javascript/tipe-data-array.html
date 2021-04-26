@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe data array</title>
+  </head>
+  <body>
+    <script>
+      //membuat array
+      let arrayKosong = [];
+      let arrayName = ["Nanda", "Aden", "Yoga"];
+
+      //menambahkan array
+      let names = [];
+      names.push("Denanda");
+      names.push("Aden");
+      names.push("Nanda");
+      names.push("Yoga");
+      names.push(1, 2, 3, 4);
+      console.table(names);
+
+      //mengubah data array
+      names[0] = "D'nanda";
+      console.table(names);
+
+      ///menghapus array
+      names.pop(); //menghapus data array di paling akhir
+      console.table(names);
+      delete names[1]; //menghapus data array tetapi indexnya tidak bergeser
+      console.table(names);
+      names[1] = "datanya ada lagi";
+      console.table(names);
+
+      //multidimensi array
+      let array2D = [
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, [21, 22, 23]],
+      ];
+      console.table(array2D);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>konversi string dan number</title>
+  </head>
+  <body>
+    <script>
+      //konversi string ke number
+      const number1 = parseInt("1");
+      const number2 = 1;
+      const sum = number1 + number2;
+      document.write(`<p>${sum}</p>`);
+      document.write(`<p>${parseInt("1.22")}</p>`);
+      document.write(`<p>${parseFloat("1.22")}</p>`);
+      document.write(`<p>${Number("1.22")}</p>`);
+
+      //konversi number ke string
+      const a = 1;
+      const b = 2;
+      const total = a.toString() + b.toString();
+      document.write(`<p>${total}</p>`);
+
+      //parseInt() dan parseFloat() masih bisa mentolerir jika kesalahan ada di belakangnya
+      document.write(`<p>${parseInt("11salah")}</p>`); // 11
+      document.write(`<p>${parseInt("aa11salah")}</p>`); // NaN
+      document.write(`<p>${parseFloat("aa11salah")}</p>`); // NaN
+      document.write(`<p>${parseFloat("11.22salah")}</p>`); // 11.22
+
+      //Number() tidak mentolerir kesalahan
+      document.write(`<p>${Number("11.22salah")}</p>`); //NaN
+      document.write(`<p>${Number("aa11.22salah")}</p>`); //NaN
+      document.write(`<p>${Number("salah")}</p>`); //NaN
+
+      //isNaN() memeriksa apakah sebuah number itu NaN atau bukan
+      document.write(`<p>${isNaN("salah")}</p>`); //true
+      document.write(`<p>${isNaN(100)}</p>`); //false
+      document.write(`<p>${isNaN(NaN)}</p>`); //true
+    </script>
+  </body>
+</html>
