@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tipe data object</title>
+  </head>
+  <body>
+    <script>
+      // membuat objek
+      // const orang = {}; // objek kosong
+
+      //membuat objek sekaligus menambahkan properti dan nilai nya
+      /*
+          menggunakan kutip dua "" hanya jika nama properti nya lebih dari
+          kata
+
+          "nama lengkap" : "Denanda prayoga"
+        */
+      const orang = {
+        "nama lengkap": "Denanda prayoga",
+        alamat: "Indonesia",
+        umur: 22,
+      };
+
+      /*
+      mengubah / menambahkan properti
+
+      orang["nama"] = "denanda prayoga";
+      orang["umur"] = 22; 
+      */
+
+      /*
+      mengakses properti bisa menggunakan tanda titik atau kurung siku ,
+      tetapi disarankan menggunakan tanda titik karena penulisan lebih sederhana,
+      
+      jika mengakses properti yang memiliki lebih dari satu kata,
+      harus menggunakan kurung [] tidak bisa menggunakan tanda titik
+      */
+
+      console.log(`Nama lengkap : ${orang["nama lengkap"]}`);
+      console.log(`Alamat : ${orang.alamat}`);
+      console.log(`Umur : ${orang.umur}`);
+
+      //menghapus properti
+      delete orang["umur"];
+
+      //menampilkan properti dan nilai dalam bentuk table
+      console.table(orang);
+    </script>
+  </body>
+</html>
