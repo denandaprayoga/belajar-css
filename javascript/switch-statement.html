@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch statement</title>
+  </head>
+  <body>
+    <script>
+      /* 
+      switch sama seperti if, hanya saja switch lebih sederhana penggunaannya
+      switch hanya bisa melakukan perbandingan ===
+    */
+      let nilai = "A";
+      switch (nilai) {
+        case "A":
+          console.log("Anda lulus dengan baik");
+          break;
+        case "B":
+        case "C":
+          console.log("Anda lulus");
+          break;
+        case "D":
+          console.log("Anda tidak lulus");
+          break;
+        default:
+          console.log("Mungkin anda salah jurusan");
+      }
+    </script>
+  </body>
+</html>
