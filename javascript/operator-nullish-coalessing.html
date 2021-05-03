@@ -4,15 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>operator nullish coalesing</title>
+    <title>operator nullish coalescing</title>
   </head>
   <body>
     <script>
       /* 
       nullish value adalah null dan undefined
-      nullish operator mirip dengan ternary operator,yang membedakan adalah pada kondisi
+      nullish operator (??) mirip dengan ternary operator,yang membedakan adalah pada kondisi
       jika bernilai null atau undefined, baru value defaultnya diambil
     */
+
+      //tanpa operator  nullish coalescing
+      let parameter = "aden";
+
+      let data = parameter;
+      if (data === undefined || data === null) {
+        data = "Nilai default";
+      }
+      console.log(`${data}`);
+
+      //menggunakan operator nullish coalescing
+      data = parameter ?? "Nilai default";
+      console.log(`${data}`);
     </script>
   </body>
 </html>

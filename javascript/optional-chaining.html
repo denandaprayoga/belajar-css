@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>optional chaining</title>
+  </head>
+  <body>
+    <script>
+      /*
+        optional chaining operator (?) merupakan operator yang digunakan
+        untuk mengamankan ketika kita ingin mengakses property sebuah object
+        dari data nullish
+
+        jika kita mencoba mengakses property dari sebuah object dari data nullish
+        tanpa menggunakan optional chaining operator, maka akan terjadi error
+      */
+
+      const person = {};
+      // const country = person.address.country; //error, address berisi undefined atau null
+
+      //pengecekan data nullish tanpa menggunakan operator chaining
+      /* if (person.address !== undefined && person.address !== null) {
+          country = person.address.country;
+        }
+        */
+
+      //menggunakan optional chaining
+      const country = person?.address?.country;
+
+      document.write(`<p>SUKSES</p>`);
+      document.write(`<p>${country}</p>`);
+      document.write(`<p>SUKSES</p>`);
+    </script>
+  </body>
+</html>
