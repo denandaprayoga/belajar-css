@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>operator logika non boolean</title>
+  </head>
+  <body>
+    <script>
+      /*
+        operator logika OR (||), membaca dari kiri kekanan
+        Operator ini akan mengambil nilai pertama yang truthy
+        jika tidak ada nilai yang truthy, maka yang nilai yang terakir yang akan diambil
+      */
+
+      console.log("KOSONG" || ""); // kosong
+      console.log(null || 1); // 1
+      console.log(undefined || null); // null
+      console.log("STRING" || "ADEN"); //ADEN
+
+      /*
+          operator AND (&&), membaca dari kiri kekanan
+          operator ini mengambil nilai pertama yang falsy
+          dan jika tidak ada nilai yang falsy maka nilai terakhir yang akan diambil
+        */
+
+      console.log("KOSONG" && ""); // ""
+      console.log(null && 1); // null
+      console.log(undefined && null); //undefined
+      console.log("STRING" && "ADEN"); // ADEN
+
+      //contoh kasus
+      const person = {
+        firstName: "Denanda",
+        lastName: "Prayoga",
+      };
+
+      const name = person.firstName || person.lastName;
+      console.log(`Nama = ${name}`);
+    </script>
+  </body>
+</html>
