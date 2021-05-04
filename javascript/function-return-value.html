@@ -17,6 +17,41 @@
 
       const result = sayHello("Denanda", "prayoga");
       document.writeln(`<p>${result}</p>`);
+
+      //kata kunci return dapat digunakan lebih dari sekali
+      //tetapi dalam 1 block statement hanya boleh ada 1 kata kunci return
+      function getFinalValue(value) {
+        if (value > 90) {
+          return "A";
+        } else if (value > 80) {
+          return "B";
+        } else if (value > 70) {
+          return "C";
+        } else if (value > 60) {
+          return "D";
+        } else {
+          return "E";
+        }
+      }
+
+      const finalValue = getFinalValue(90);
+      document.write(`<p>Nilai kamu ${finalValue}`);
+
+      //ketika program bertemu dengan kata kunci return maka program akan
+      //berhenti, kode yang berada dibawah kata kunci return tidak akan pernah
+      //dieksekusi
+      function isContains(array, searchValue) {
+        for (const element of array) {
+          if (element === searchValue) {
+            return true;
+          }
+        }
+        return false;
+      }
+      const array = [12, 34, 3252, 35, 22, 5, 556, 22, 36, 9];
+      const search = 35;
+      const found = isContains(array, search);
+      document.write(`<p>${found}</p>`);
     </script>
   </body>
 </html>
