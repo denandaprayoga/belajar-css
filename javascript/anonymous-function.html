@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anonymous function</title>
+  </head>
+  <body>
+    <script>
+      //function tanpa nama atau biasa disebut sebagai anonymous function
+      //anonymous function bisa di buat di dalam variable atau dikirim sebagai parameter
+
+      //anonymous function di variable
+      const say = function (name) {
+        document.writeln(`<p>Hello ${name}</p>`);
+      };
+      say("Denanda prayoga");
+
+      function giveMeName(callback) {
+        callback("Denanda");
+      }
+      //anonymous function sebagai nilai parameter
+      giveMeName(function (name) {
+        document.write(`<p>Hello ${name}</p>`);
+      });
+    </script>
+  </body>
+</html>
