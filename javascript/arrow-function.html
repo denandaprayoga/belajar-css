@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Arrow Function membuat function biasa menjadi lebih sederhana
+        membuat arrow function menggunakan tanda =>
+        kekurangan arrow function
+        - tidak bisa menggunakan fitur function generator
+        - tidak ada this
+        - tidak ada super
+      */
+
+      //membuat arrow function
+      const say = (name) => {
+        console.log(`Hello ${name}`);
+      };
+      say("Denanda prayoga");
+
+      //membuat arrow function tanpa block statement
+      //jika isi function hanya satu baris
+      //kita bisa membuat arrow funcion tanpa {}
+      const sayHello = (name) => console.log(`Hello ${name}`);
+      sayHello("Aden");
+
+      //arrow function bisa mengembalikan nilai, sama seperti function biasa
+      //jika menggunakan block maka perlu kata kunci return
+      //jika tidak menggunakan block, tidak perlu kata kunci return
+
+      //menggunakan block dan kata kunci return
+      /*
+      const sum = (value1, value2) => {
+        return value1 + value2;
+      };
+      console.log(sum(25));
+      */
+
+      //tanpa block dan tanpa kata kunci return
+      const sum = (value1, value2) => value1 + value2;
+      console.log(sum(25, 25));
+
+      //arrow function sebagai parameter
+      //karena arrow function sama seperti anonymous function,
+      //oleh karena itu kita bisa mengirim arrow function sebagai parameter
+      function giveMeName(callback) {
+        callback("Denanda prayoga");
+      }
+      giveMeName((name) => console.log(`Hello ${name}`));
+    </script>
+  </body>
+</html>
