@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kata kunci this</title>
+  </head>
+  <body>
+    <script>
+      console.log(this); //this milik objek window
+      function sample() {
+        console.log(this); //this milik objek window
+        function inner() {
+          console.log(this); //this milik objek window
+        }
+        inner();
+      }
+      sample();
+
+      const person = {
+        name: "Denanda prayoga",
+        sayHello: function (name) {
+          //this milik person objek
+          console.log(`Hello ${name} my name is ${this.name}`);
+        },
+
+        //karena arrow function tidak memiliki kata kunci this,
+        //maka kata kunci this di arrow function tidak akan mengacu ke objek
+        //saat ini (person), melainkan mangacu ke objek window
+        greeting: (greeting) => {
+          console.log(this); //this mengacu ke objek window
+          console.log(`Selamat ${greeting} ${this.name}`); //this mengacu ke objek window, bukan ke properti name
+        },
+      };
+      person.sayHello("aden");
+      person.greeting("malam");
+    </script>
+  </body>
+</html>
