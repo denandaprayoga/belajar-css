@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <script>
+      //Destructuring adalah fitur yang digunakan untuk membongkar nilai-nilai
+      //dari array atau object ke dalam variable baru
+
+      {
+        //mengambil data array tanpa destructuring
+        const names = ["denanda", "prayoga"];
+        const firstName = names[0];
+        const lastName = names[1];
+        console.log(firstName);
+        console.log(lastName);
+      }
+
+      {
+        //mengambil data array menggunakan destructuring
+        const names = ["denanda", "prayoga", "aden", "nanda"];
+        //nama-nama variable dibungkus dalam kurung siku []
+        // mengambil nilai secara terurut
+        const [firstName, lastName, ...others] = names;
+        console.log(firstName);
+        console.log(lastName);
+        console.log(others); // array ["aden", "nanda"]
+        console.log(others[0]);
+        console.log(others[1]);
+      }
+
+      {
+        //mengambil data object tanpa destructuring
+        const person = {
+          firstName: "Denanda",
+          lastName: "prayoga",
+          address: {
+            street: "Jalan apa saja",
+            city: "Bogor",
+            country: "Indonesia",
+          },
+          hobbies: ["game", "bulutangkis"],
+        };
+        const firstName = person.firstName;
+        const lastName = person.lastName;
+        const address = person.address;
+        const hobbies = person.hobbies;
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(address);
+        console.log(hobbies);
+      }
+
+      {
+        //mengambil data object menggunakan destructuring
+        const person = {
+          firstName: "Denanda",
+          lastName: "prayoga",
+          address: {
+            street: "Jalan apa saja",
+            city: "Bogor",
+            country: "Indonesia",
+          },
+          hobbies: ["game", "bulutangkis"],
+        };
+
+        //nama-nama variable dibungkus dalam kurung kurawal {}
+        //dan nama variable sama dengan nama propertinya
+        //nama-nama variabel tidak harus terurut sesuai urutan propertinya
+        const { firstName, lastName, hobbies, address } = person;
+        console.log(firstName);
+        console.log(lastName);
+        console.log(hobbies);
+        console.log(address);
+
+        //destructuring nested object
+        const {
+          address: { street, city, country },
+        } = person;
+        //console.log(address); //address tidak bisa di akses lagi
+        console.log(street);
+        console.log(city);
+        console.log(country);
+      }
+
+      {
+        //mengirim nilai ke parameter tanpa destructuring
+        //object
+        function displayName(person) {
+          console.log(person.firstName);
+          console.log(person.lastName);
+        }
+        const person = {
+          firstName: "Denanda",
+          lastName: "prayoga",
+        };
+        displayName(person);
+
+        //array
+        function sum(array) {
+          return array[0] + array[1];
+        }
+        console.log(sum([1, 1]));
+        console.log(sum([10, 10]));
+      }
+
+      {
+        //mengirim nilai ke parameter menggunakan destructuring
+        //object
+        function displayName({ firstName, lastName }) {
+          console.log(firstName);
+          console.log(lastName);
+        }
+
+        const person = {
+          firstName: "Denanda",
+          lastName: "prayoga",
+        };
+
+        displayName(person);
+
+        //array
+        function sum([value1, value2]) {
+          return value1 + value2;
+        }
+        console.log(sum([2, 2]));
+        console.log(sum([20, 20]));
+      }
+
+      {
+        //memberikan nilai default di destructuring
+        //kita bisa memberikan nilai default ke desctructing, apabila
+        //data di array atau properti di objek tidak ada, maka nilai default
+        //yang akan digunakan
+
+        const hobbies = ["sepak bola", "berenang"];
+        const [firstHobby, secondHobby, thirdHobby = "bulutangkis"] = hobbies;
+        console.log(firstHobby);
+        console.log(secondHobby);
+        console.log(thirdHobby);
+
+        const car = {
+          name: "avanza",
+          year: 2020,
+          color: "red",
+        };
+        const { name, year, color = "white" } = car;
+        console.log(name);
+        console.log(year);
+        console.log(color); //nilai yang digunakan "red"
+      }
+
+      {
+        //menggunakan nama variable lain
+        //untuk desctucturing array kita bisa memberikan nama variable
+        //sesuka kita, sedangkan desctructuring object nama variable harus
+        //sama dengan nama properti nya, namun demikian tidak seperti itu
+        //ternyata kita masih bisa menggunakan nama variable yang berbeda dari propertinya
+
+        const car = {
+          brand: "avanza",
+          year: 2020,
+          color: "red",
+        };
+        const { brand: merek, year: tahun, color: warna = "putih" } = car;
+        console.log(merek);
+        console.log(tahun);
+        console.log(warna);
+      }
+    </script>
+  </body>
+</html>
