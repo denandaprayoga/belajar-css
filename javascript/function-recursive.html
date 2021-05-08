@@ -18,6 +18,15 @@
         }
       }
       console.log(factorial(5));
+
+      function hitungMundur(n) {
+        if (n === 0) {
+          return 0;
+        }
+        console.log(n);
+        hitungMundur(n - 1);
+      }
+      hitungMundur(10);
     </script>
   </body>
 </html>
