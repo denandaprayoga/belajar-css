@@ -8,37 +8,122 @@
   </head>
   <body>
     <script>
+      //array di javascript merupakan tipe objek
+      //array dapat menampung nilai lebih dari satu
+      //nilai di array disebut juga sebagai elemen
+      //untuk mengakses elemen / nilai array kita gunakan index
+      //index di array dimulai dari 0
+      //sedangkan elemen array di mulai dari 1
+      //nilai / elemen di array tipe datanya boleh berbeda-beda
+
       //membuat array
       let arrayKosong = [];
       let arrayName = ["Nanda", "Aden", "Yoga"];
 
-      //menambahkan array
-      let names = [];
-      names.push("Denanda");
-      names.push("Aden");
-      names.push("Nanda");
-      names.push("Yoga");
-      names.push(1, 2, 3, 4);
-      console.table(names);
+      {
+        //menambahkan array
+        let names = [];
+        names[0] = "Denanda prayoga";
+        //atau menggunakan method push()
+        names.push("Denanda");
+        names.push("Aden");
+        names.push("Nanda");
+        names.push("Yoga");
+        names.push(1, 2, 3, 4);
+        console.table(names);
+      }
 
-      //mengubah data array
-      names[0] = "D'nanda";
-      console.table(names);
+      {
+        let names = ["denanda", "prayoga"];
+        //mengubah data array
+        names[0] = "D'nanda";
+        console.table(names);
+      }
 
-      ///menghapus array
-      names.pop(); //menghapus data array di paling akhir
-      console.table(names);
-      delete names[1]; //menghapus data array tetapi indexnya tidak bergeser
-      console.table(names);
-      names[1] = "datanya ada lagi";
-      console.table(names);
+      {
+        let names = ["denanda", "prayoga"];
+        ///menghapus array
+        names.pop(); //menghapus data array di paling akhir
+        console.table(names);
+        delete names[1]; //menghapus data array tetapi indexnya tidak bergeser
+        console.table(names);
+        // mengisi kembali nilai di index yg dihapus
+        names[1] = "datanya ada lagi";
+        console.table(names);
+      }
 
-      //multidimensi array
-      let array2D = [
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, [21, 22, 23]],
-      ];
-      console.table(array2D);
+      {
+        //multidimensi array
+        let array2D = [
+          [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+          [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, [21, 22, 23]],
+        ];
+        console.table(array2D);
+      }
+
+      {
+        //method pada array
+        //method join() - menggabungkan elemen array dan mengkonversi menjadi string
+        let names = ["denanda", "prayoga"];
+        console.log(names.join(" "));
+
+        //push() - menambahkan elemen di akhri array
+        names.push("aden", "yoga");
+        console.log(names);
+
+        //pop() - menghapus elemen di akhir array
+        names.pop();
+        names.pop();
+        console.log(names);
+
+        //unshift() - menambahkan elemen diawal array
+        names.unshift("aden");
+        console.log(names);
+
+        //shift() - menghapus elemen diawal array
+        names.shift();
+        console.log(names);
+
+        //splice() - menambahkan elemen array di index yg kita mau
+        //splice(indexAwal, indexYgInginDihapus, elemenBaru1, elemenBaruN)
+        names.splice(1, 0, "aden", "nanda", "yoga");
+        console.log(names);
+
+        //slice() - mengiris / mengambil elemen array dan membuat array baru
+        //slice(indexAwal, indexAkhir)
+        //elemen indexAkhir nya tidak ikut teriris / terambil
+        let fruits = ["Banana", "Apple", "Grape", "Guava", "Watermelon"];
+        let fruitsBaru = fruits.slice(1, 4);
+        console.log(fruits);
+        console.log(fruitsBaru);
+
+        //forEach() - menjalankan function sekali untuk setiap elemen array
+        //forEach(function(e, i){ isi function }), parameter e untuk elemen, i untuk index, parameter i adalah optional
+        let numbers = [1, 2, 3, 4, 5, 6];
+        numbers.forEach((e) => console.log(e));
+
+        //map() - sama seperti forEach() bedanya map() mengembalikan array baru
+        let pangkatAngka = numbers.map((e) => e * 2);
+        console.log(pangkatAngka);
+
+        //sort() - mengurutkan elemen array dari terkecil ke terbesar
+        let angka = [3, 4, 15, 2, 6, 8, 9, 2, 1];
+        //angka.sort();//[1,15,2,2,3,4,6,8,9]
+        //untuk memperbaikinya agar nilai terurut dengan benar
+        //tambahkan sebuah function, sebagai nilai parameter
+        angka.sort((a, b) => a - b);
+        console.log(angka.join(" "));
+
+        //find() - mencari satu nilai dari array
+        //jika nilainya tidak ditemukan, maka undefined akan dikembalikan
+        let cari = angka.find((e) => e === 3);
+        console.log(cari);
+
+        //filter() - mencari banyak nilai dari array, dan mengembalikan
+        //dalam bentuk array
+        let filterArray = angka.filter((e) => e > 5);
+        console.log(filterArray);
+      }
     </script>
   </body>
 </html>
