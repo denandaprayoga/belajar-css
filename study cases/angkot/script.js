@@ -1,36 +1,22 @@
-let penumpang = [];
-let tambahPenumpang = function (namaPenumpang, penumpang) {
-  if (penumpang.length === 0) {
-    penumpang.push(namaPenumpang);
-    return penumpang;
-  } else {
-    for (let i = 0; i < penumpang.length; i++) {
-      if (penumpang[i] === namaPenumpang) {
-        console.log(`${namaPenumpang} sudah ada didalam angkot`);
-        return penumpang;
-      } else if (i === penumpang.length - 1) {
-        penumpang.push(namaPenumpang);
-        return penumpang;
-      }
+function Angkot(sopir, trayek, penumpang, kas) {
+  this.sopir = sopir;
+  this.trayek = trayek;
+  this.penumpang = penumpang;
+  this.kas = kas;
+  this.penumpangNaik = function (namaPenumpang) {
+    this.penumpang.push(namaPenumpang);
+  };
+  this.penumpangTurun = function (namaPenumpang, bayar) {
+    if (penumpang.length === 0) {
+      console.log(`angkot masih kosong`);
+      return penumpang;
     }
-  }
-};
-
-let hapusPenumpang = function (namaPenumpang, penumpang) {
-  if (penumpang.length === 0) {
-    console.log(`Angkot masih kosong`);
-    return penumpang;
-  } else {
     for (let i = 0; i < penumpang.length; i++) {
-      if (penumpang[i] === namaPenumpang) {
-        penumpang.splice(i, 1);
-        return penumpang;
-      } else if (i === penumpang.length - 1) {
-        console.log(`${namaPenumpang} tidak ada di angkot`);
-        return penumpang;
-      }
+      this.penumpang.splice(i, 1);
+      this.kas += bayar;
+      return penumpang;
     }
-  }
-};
+  };
+}
 
-console.log(penumpang);
+let angkot1 = new Angkot("aden", ["citayam", "bojonggede"], [], 0);
