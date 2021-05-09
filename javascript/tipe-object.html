@@ -8,11 +8,12 @@
   </head>
   <body>
     <script>
-      /* 
+      /*
         tipe data objek mirip dengan tipe data array
         yang membedakan adalah tipe data array menggunakan index bernomor yang dimulai dari 0
         sedangkan di tipe data objek, index di sebut sebagai properti atau atribut.
         properti atau atribut ini dapat berupa string
+        function didalam objek disebut juga method
       */
 
       // membuat objek
@@ -35,13 +36,13 @@
       mengubah / menambahkan properti
 
       orang["nama"] = "denanda prayoga";
-      orang["umur"] = 22; 
+      orang.umur= 22;
       */
 
       /*
       mengakses properti bisa menggunakan tanda titik atau kurung siku ,
       tetapi disarankan menggunakan tanda titik karena penulisan lebih sederhana,
-      
+
       jika mengakses properti yang memiliki lebih dari satu kata,
       harus menggunakan kurung [] tidak bisa menggunakan tanda titik
       */
@@ -55,6 +56,43 @@
 
       //menampilkan properti dan nilai dalam bentuk table
       console.table(orang);
+
+      {
+        //membuat object
+        //object literal
+        const mhs = {
+          nama: "denanda prayoga",
+          jurusan: "Teknik informatika",
+          email: "denanda@gmail.com",
+        };
+
+        //function declaration
+        function objekMahasiswa(nama, jurusan, email) {
+          let mhs = {};
+          mhs.nama = nama;
+          mhs.jurusan = jurusan;
+          mhs.email = email;
+          return mhs;
+        }
+        let mhs2 = objekMahasiswa("aden", "Sisten informasi", "aden@gmail.com");
+        let mhs3 = objekMahasiswa(
+          "nanda",
+          "Teknik informatika",
+          "nanda@gmail.com"
+        );
+
+        //constructor
+        function Mahasiswa(nama, jurusan, email) {
+          this.nama = nama;
+          this.jurusan = jurusan;
+          this.email = email;
+        }
+        let mhs4 = new Mahasiswa(
+          "Denanda prayoga",
+          "Teknik informatika",
+          "denandaprayoga@gmail.com"
+        );
+      }
     </script>
   </body>
 </html>

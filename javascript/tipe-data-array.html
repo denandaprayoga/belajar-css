@@ -45,11 +45,13 @@
         ///menghapus array
         names.pop(); //menghapus data array di paling akhir
         console.table(names);
-        delete names[1]; //menghapus data array tetapi indexnya tidak bergeser
+        delete names[1]; //menghapus elemen array, tetapi panjangnya tidak berubah, lebih baik hindari penggunaan delete
         console.table(names);
         // mengisi kembali nilai di index yg dihapus
         names[1] = "datanya ada lagi";
         console.table(names);
+        //shift() - menghapus elemen diawal array
+        //splice() - dapat menambah / menghapus elemen array di index yg kita mau
       }
 
       {
