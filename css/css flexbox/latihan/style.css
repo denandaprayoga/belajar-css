@@ -1,43 +1,34 @@
-* {
+html,
+body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ccc;
+  line-height: 1.65;
+}
+
+/* Latihan 1 */
+.container-satu {
+  width: 800px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
   box-sizing: border-box;
-}
-
-header {
-  width: 100%;
-  min-height: 100vh;
-  background: url("image/bg-header.jpg");
-  background-position: center;
-  background-size: cover;
-}
-nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 3.5rem;
 }
 
-nav .logo h1 {
-  font-size: 2rem;
-  font-weight: bold;
+.kolom-utama {
+  flex: 3;
+  order: 2;
 }
-nav .logo h1 span {
-  color: brown;
+.sidebar-satu {
+  flex: 1;
+  order: 1;
 }
-
-ul {
-  display: flex;
-  list-style: none;
-  /* background-color: blueviolet; */
-}
-ul li a {
-  padding: 20px 30px;
-  text-decoration: none;
-  color: black;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-ul li a:hover {
-  background-color: blue;
+.sidebar-dua {
+  flex: 1;
+  order: 3;
 }
