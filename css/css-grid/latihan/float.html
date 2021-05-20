@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menggunakan float</title>
+    <style>
+      /* menggunakan float */
+      body {
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+      }
+      .container {
+        width: 800px;
+        border: 5px solid black;
+        margin: 30px auto;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      header {
+        padding: 40px 0;
+        background-color: blueviolet;
+      }
+
+      .content::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+
+      .sidebar {
+        float: left;
+        width: 40%;
+      }
+
+      .sidebar aside {
+        background-color: cadetblue;
+        padding: 60px 0;
+      }
+
+      .sidebar nav {
+        background-color: crimson;
+        padding: 101.5px 0;
+      }
+
+      main {
+        background-color: deeppink;
+        padding: 171px;
+        width: 60%;
+        float: right;
+        box-sizing: border-box;
+      }
+      footer {
+        padding: 20px 0;
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <div class="content">
+        <div class="sidebar">
+          <aside>Aside</aside>
+          <nav>Nav</nav>
+        </div>
+        <main>Main</main>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

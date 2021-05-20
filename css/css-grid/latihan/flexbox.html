@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menggunakan flexbox</title>
+    <style>
+      /* menggunakan flexbox */
+      body {
+        text-align: center;
+        color: white;
+        text-transform: uppercase;
+      }
+      .container {
+        width: 800px;
+        border: 5px solid black;
+        margin: 30px auto;
+        padding: 5px;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: blueviolet;
+        padding: 40px 0;
+      }
+
+      .content {
+        display: flex;
+      }
+      .sidebar {
+        flex: 1;
+      }
+      aside {
+        background-color: cadetblue;
+        padding: 40px 0;
+      }
+
+      nav {
+        background-color: crimson;
+        padding: 50px 0;
+      }
+
+      main {
+        background-color: deeppink;
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      footer {
+        background-color: darkgray;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>Header</header>
+      <div class="content">
+        <div class="sidebar">
+          <aside>Aside</aside>
+          <nav>Nav</nav>
+        </div>
+        <main>Main</main>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

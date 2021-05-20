@@ -2,26 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Belajar css grid | grid-template-columns / rows</title>
+    <title>Grid | fr / fraction</title>
     <style>
-      .container {
-        display: grid;
-        width: 800px;
-        height: 500px;
-        border: 2px solid black;
-        margin: auto;
-        grid-template-columns: 1fr 2fr 3fr;
-        grid-template-rows: 200px 200px 100px;
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #ddd;
       }
+
+      .container {
+        width: 60%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: 1fr 2fr 3.5fr;
+        grid-template-rows: 2fr 3.5fr 2fr;
+        /* auto-rows dan auto-columns untuk mengatur ukuran grid track (implisit track) */
+        /* grid-auto-rows: 120px; */
+        /* grid-auto-columns: 30px; */
+
+        /* auto-flow mengatur penempatan item / cell pada grid track */
+        /* grid-auto-flow: column; */
+      }
+
       .item {
-        background-color: blueviolet;
+        background-color: rgb(138, 209, 254);
         display: flex;
         justify-content: center;
         align-items: center;
       }
+
       .item:nth-child(even) {
-        background-color: #ddd;
+        background-color: rgb(255, 142, 142);
       }
     </style>
   </head>
