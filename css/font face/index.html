@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font face</title>
+    <style>
+      /* @import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap'); */
+      @font-face {
+        font-family: 'ChunkFive';
+        src: url('ChunkFive-Regular.otf') format('truetype');
+      }
+
+      @font-face {
+        font-family: 'justanotherhand';
+        src: url('justanotherhand-regular.ttf') format('truetype');
+      }
+
+      @font-face {
+        font-family: '3dumbregular';
+        src: url('3Dumb-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      h1 {
+        font-family: 'ChunkFive', Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-family: 'justanotherhand', Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 5rem;
+      }
+
+      h3 {
+        font-family: '3dumbregular', Arial, Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <h2>Hello word</h2>
+    <h3>Hello world</h3>
+  </body>
+</html>
