@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform</title>
+    <style>
+      /* 
+        fungsi yg dimiliki property transform
+        scale(angka), scaleX(angka), scaleY(angka)
+        rotate(deg), rotateX(deg), rotateY(deg)
+        skew(deg), skewX(deg), skewY(deg)
+        translate(px), translateX(px), translateY(px)
+
+        note: property transform menggunakna hardware acceleration
+       */
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin: 50px auto 0;
+        transition: 1s;
+      }
+      .kotak:hover {
+        transform: translate(50px) rotate(360deg);
+      }
+      p {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="kotak"></div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, in est
+      laboriosam voluptatibus fugit non dolor recusandae optio at aliquam,
+      voluptatum perspiciatis, porro reprehenderit omnis officiis maiores
+      mollitia maxime sapiente.
+    </p>
+  </body>
+</html>
