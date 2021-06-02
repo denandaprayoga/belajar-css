@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      img {
+        /* filter: blur(px); */
+        /* filter: brightness(angka | %); */
+        /* filter: contrast(angka | %); */
+        /* filter: saturate(angka | %); */
+        /* filter: grayscale(angka | %); */
+        /* filter: sepia(angka | %); */
+        /* filter: hue-rotate(deg); */
+        /* filter: invert(100%); */
+        /* filter: opacity(50%); sama seperti property opacity*/
+        /* filter: drop-shadow(2px 2px 5px black); sama seperti property box-shadow / text-shadow*/
+        /* filter menggunakan hardware acceleration, sehingga bisa menjadi lebih cepat */
+        filter: grayscale(100%) drop-shadow(2px 2px 2px black)
+          drop-shadow(-2px -2px 2px red);
+        /* note: urutan dari nilai filter itu berpengaruh */
+      }
+      h1 {
+        filter: drop-shadow(2px 2px 2px black);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="img/1.jpg" alt="1" />
+    <h1>Hellow World</h1>
+  </body>
+</html>
