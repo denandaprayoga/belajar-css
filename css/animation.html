@@ -6,30 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS animation</title>
     <style>
+      .container {
+        width: 100%;
+        height: 500px;
+        border: 1px solid #ccc;
+      }
       .kotak {
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         background-color: salmon;
         /* animation: [name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state] */
-        animation: animasiKotak 2s ease infinite;
+        animation: animasiKotak 5s ease infinite;
       }
-
+      .buttons {
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        font-size: 1.8rem;
+        border: none;
+        box-shadow: 0 0 5px rgba(82, 82, 82, 0.7);
+        margin: 10px;
+      }
+      button.start {
+        background-color: green;
+        color: white;
+      }
+      button.stop {
+        background-color: red;
+        color: white;
+      }
       @keyframes animasiKotak {
         0% {
-          width: 0;
+          margin: 0;
         }
-        50% {
-          width: 500px;
-          height: 200px;
+        20% {
+          margin: 0 0 0 80%;
+        }
+        40% {
+          margin: 200px 0 0 80%;
+        }
+        60% {
+          margin: 200px 0 0 50%;
+        }
+        80% {
+          margin: 400px 0 0 50%;
         }
         100% {
-          width: 500px;
-          height: 500px;
+          margin: 400px 0 0 80%;
         }
       }
     </style>
   </head>
   <body>
-    <div class="kotak"></div>
+    <div class="container">
+      <div class="kotak"></div>
+    </div>
+    <div class="buttons">
+      <button class="start" type="button">start</button>
+      <button class="stop" type="button">stop</button>
+    </div>
+
+    <script>
+      const bStart = document.querySelector('.start');
+      const bStop = document.querySelector('.stop');
+      const kotak = document.querySelector('.kotak');
+      bStop.addEventListener('click', function () {
+        kotak.style.animationPlayState = 'paused';
+      });
+      bStart.addEventListener('click', function () {
+        kotak.style.animationPlayState = 'running';
+      });
+    </script>
   </body>
 </html>
