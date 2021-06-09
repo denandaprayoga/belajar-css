@@ -1,0 +1,105 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap');
+
+/* style utama */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Odibee Sans', cursive;
+  background-color: #eee;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 30px 0;
+  letter-spacing: 3px;
+}
+
+.container {
+  max-width: 80%;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.photos {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 150px;
+  gap: 10px;
+}
+
+figure {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+}
+
+figure figcaption {
+  position: absolute;
+  width: 100%;
+  bottom: -45px;
+  color: white;
+  text-align: center;
+  letter-spacing: 0.5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 0;
+  font-size: 1.3rem;
+  transition: 300ms;
+}
+
+figure:hover figcaption {
+  bottom: 0;
+}
+
+/* overlay */
+.overlay {
+  position: fixed;
+}
+
+.overlay:target {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+
+.overlay img,
+.overlay a {
+  position: absolute;
+  display: none;
+  transition: 1s;
+}
+
+.overlay:target a {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.overlay:target img {
+  display: block;
+  width: 350px;
+  left: 39%;
+  top: 100px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+}
