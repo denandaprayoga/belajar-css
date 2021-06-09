@@ -83,7 +83,6 @@ figure:hover figcaption {
 .overlay a {
   position: absolute;
   display: none;
-  transition: 1s;
 }
 
 .overlay:target a {
@@ -94,12 +93,24 @@ figure:hover figcaption {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
+  animation: zoomAndFade 1s forwards;
 }
 
 .overlay:target img {
   display: block;
   width: 350px;
-  left: 39%;
+  left: 50%;
+  margin-left: -150px;
   top: 100px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  animation: zoomAndFade 1s forwards;
+}
+
+@keyframes zoomAndFade {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
