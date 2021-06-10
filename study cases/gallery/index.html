@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LightBox</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1>Gallery LightBox</h1>
@@ -17,9 +21,15 @@
             <figcaption>Image 1</figcaption>
           </a>
           <div class="overlay" id="img-1">
+            <a href="#" class="close">x close</a>
+            <a href="#img-4" class="prev"
+              ><span class="material-icons"> arrow_back_ios </span></a
+            >
             <img src="img/fullsize/1.jpg" alt="1" />
+            <a href="#img-2" class="next"
+              ><span class="material-icons"> arrow_forward_ios </span></a
+            >
             <p>Image 1</p>
-            <a href="#">x close</a>
           </div>
         </figure>
         <figure>
@@ -28,9 +38,15 @@
             <figcaption>Image 2</figcaption>
           </a>
           <div class="overlay" id="img-2">
+            <a href="#" class="close">x close</a>
+            <a href="#img-1" class="prev"
+              ><span class="material-icons"> arrow_back_ios </span></a
+            >
             <img src="img/fullsize/2.jpg" alt="2" />
+            <a href="#img-3" class="next"
+              ><span class="material-icons"> arrow_forward_ios </span></a
+            >
             <p>Image 2</p>
-            <a href="#">x close</a>
           </div>
         </figure>
         <figure>
@@ -39,9 +55,15 @@
             <figcaption>Image 3</figcaption>
           </a>
           <div class="overlay" id="img-3">
-            <img src="img/fullsize/3.jpg" alt="3x" />
+            <a href="#" class="close">x close</a>
+            <a href="#img-2" class="prev"
+              ><span class="material-icons"> arrow_back_ios </span></a
+            >
+            <img src="img/fullsize/3.jpg" alt="3" />
+            <a href="#img-4" class="next"
+              ><span class="material-icons"> arrow_forward_ios </span></a
+            >
             <p>Image 3</p>
-            <a href="#">x close</a>
           </div>
         </figure>
         <figure>
@@ -50,9 +72,15 @@
             <figcaption>Image 4</figcaption>
           </a>
           <div class="overlay" id="img-4">
-            <img src="img/fullsize/4.jpg" alt="4x" />
+            <a href="#" class="close">x close</a>
+            <a href="#img-3" class="prev"
+              ><span class="material-icons"> arrow_back_ios </span></a
+            >
+            <img src="img/fullsize/4.jpg" alt="4" />
+            <a href="#img-1" class="next"
+              ><span class="material-icons"> arrow_forward_ios </span></a
+            >
             <p>Image 4</p>
-            <a href="#">x close</a>
           </div>
         </figure>
       </div>

@@ -85,40 +85,49 @@ figure:hover figcaption {
   position: absolute;
   display: none;
 }
-
-.overlay:target a {
+.overlay:target .close,
+.overlay:target img,
+.overlay:target p,
+.overlay:target .prev,
+.overlay:target .next{
   display: block;
-  position: absolute;
+  color: white;
+  animation: zoomAndFade 1s;
+}
+.overlay:target .close {
   left: 50%;
   top: 50px;
   margin-left: -30px;
   text-decoration: none;
-  color: white;
   font-size: 1.5rem;
-  animation: zoomAndFade 1s;
 }
 
 .overlay:target img {
-  display: block;
-  width: 50%;
+  width: 500px;
   left: 50%;
-  margin-left: -350px;
+  margin-left: -250px;
   top: 100px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-  animation: zoomAndFade 1s;
 }
 
 .overlay:target p {
-  display: block;
-  position: absolute;
   bottom: 0;
   width: 100%;
-  height: 100px;
+  padding: 20px 0;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 3rem;
-  animation: zoomAndFade 1s;
-  color: white;
+}
+
+.overlay:target .prev,
+.overlay:target .next{
+  display: block;
+  top: 250px;
+  left: 400px;
+}
+
+.overlay:target .next{
+  left: 940px;
 }
 
 @keyframes zoomAndFade {
